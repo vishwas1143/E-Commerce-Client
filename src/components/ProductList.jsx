@@ -10,6 +10,7 @@ function ProductList({ addToCart }) {
       .then((data) => setProducts(data))
       .catch((err) => console.error(err));
   }, []);
+  console.log("pro", products);
 
   return (
     <div>
@@ -17,7 +18,7 @@ function ProductList({ addToCart }) {
       <div className="product-list">
         {products.map((product) => (
           <ProductItem
-            key={product.id}
+            key={product._id}
             product={product}
             addToCart={addToCart}
           />
