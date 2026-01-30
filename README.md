@@ -1,33 +1,86 @@
 
-🛒 Simple Shopping Cart (MERN Stack)
+🛒 Shopping Cart (MERN Stack)
+ 
+ This repository contains the frontend of an E-Commerce Shopping Cart application built using React.
+Users can browse products, add them to cart, manage quantities, and place orders seamlessly.
 
-A full-stack Shopping Cart / E-Commerce application built using the MERN stack.
-The project focuses on clean backend logic, cart management, order placement, and image uploads.
+🚀 Tech Stack
 
-🚀 Features
-🧾 Products
+React (Vite)
 
-Product list with name, price, stock, and image
+React Router DOM
 
-Products stored and fetched directly from MongoDB
+React Toastify
 
-Product image upload using Multer
+React Icons
 
-🛍️ Cart
+Fetch API
 
-Add items to cart
+CSS
 
-Increase / decrease quantity
+⚙️ Installation & Setup
+npm install
+npm run dev
 
-Remove items from cart
 
-Prevent adding items beyond available stock
+Frontend runs on:
 
-📦 Orders
+http://localhost:5173
 
-Place order from cart
+🔗 Backend API Integration
 
-Automatic calculation of:
+Backend Base URL:
+
+http://localhost:5000
+
+APIs Used
+
+GET /api/products
+
+POST /api/cart
+
+PUT /api/cart/increase/:productId
+
+PUT /api/cart/decrease/:productId
+
+DELETE /api/cart
+
+POST /api/orders
+
+✨ Functionalities
+Home / Product List
+
+Displays all available products fetched from the backend.
+
+Shows product name, price, stock, and image.
+
+Acts as the main shopping page for users.
+
+Each product has an Add to Cart button.
+
+Product Item
+
+Individual product card component.
+
+Shows product details clearly.
+
+Prevents adding items beyond available stock.
+
+Sends product ID to backend when added to cart.
+
+Cart Page
+
+Displays all items added to cart.
+
+Allows users to:
+
+Increase quantity
+
+Decrease quantity
+
+View item-wise pricing
+
+Automatically calculates:
 
 Subtotal
 
@@ -35,130 +88,47 @@ Subtotal
 
 Final total amount
 
-Reduce product stock after successful order
+Place Order
 
-Clear cart after order placement
+Sends cart data to backend for order creation.
 
-🖼️ Image Handling
+Displays success or failure toast messages.
 
-Upload product images via Postman
+Clears cart on successful order.
 
-Images stored on server and served using Express static folder
+Redirects user to Order Success page.
 
-🧰 Tech Stack
-Frontend
+Navbar
 
-React.js
+Provides navigation across the application.
 
-Axios
+Displays Cart and Home options.
 
-React Toastify
+Ensures smooth user flow between pages.
 
-Backend
+Toast Notifications
 
-Node.js
+Shows success/error messages for:
 
-Express.js
+Adding to cart
 
-MongoDB
+Quantity updates
 
-Mongoose
+Order placement
 
-Multer (for image upload)
+🔮 Future Scope
 
-📁 Backend Folder Structure
-backend/
-│── controllers/
-│   ├── cart.controller.js
-│   ├── order.controller.js
-│   └── product.controller.js
-│
-│── models/
-│   ├── cart.model.js
-│   ├── order.model.js
-│   └── product.model.js
-│
-│── routes/
-│   ├── cart.routes.js
-│   ├── order.routes.js
-│   └── product.routes.js
-│
-│── middlewares/
-│   └── upload.js
-│
-│── uploads/
-│
-│── server.js
-│── package.json
+User Authentication (Login / Signup)
 
-⚙️ Setup & Installation
-1️⃣ Clone the Repository
-git clone https://github.com/your-username/shopping-cart-mern.git
-cd shopping-cart-mern
+Product categories & filtering
 
-2️⃣ Backend Setup
-cd backend
-npm install
-npm run dev
+Order history page
 
-3️⃣ Frontend Setup
-cd frontend
-npm install
-npm start
+Payment gateway integration (Razorpay / Stripe)
 
-🔗 API Endpoints
-Products
+Admin dashboard for product management
 
-GET /api/products – Get all products
-
-POST /api/products – Create product with image upload
-
-Cart
-
-POST /api/cart – Add item to cart
-
-PUT /api/cart/:id – Update cart quantity
-
-DELETE /api/cart/:id – Remove item from cart
-
-Orders
-
-POST /api/orders – Place order
-
-📤 Upload Product Image (Postman)
-
-POST http://localhost:5000/api/products
-
-Body → form-data
-
-Key	Type	Value
-name	Text	Aloe Gel
-price	Text	250
-stock	Text	50
-image	File	Select image
-🧠 Learning Focus
-
-Clean backend logic
-
-MongoDB relationships
-
-Cart & order workflow
-
-Image upload handling
-
-Error handling & validation
-
-📌 Future Improvements
-
-User authentication
-
-Order history
-
-Admin dashboard
-
-Payment gateway integration
-
-Product categories
+Image upload using Cloudinary
 
 👨‍💻 Author
 
